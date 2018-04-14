@@ -2,18 +2,18 @@
 
 > A Vue.js project
 
-## 关于vue-cli
+##  关于vue-cli
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-#项目总结
-##express
+# 项目总结
+## express
 req.query ： 处理 get 请求，获取 get 请求参数
 req.params ： 处理 /:xxx 形式的 get 或 post 请求，获取请求参数
 req.body ： 处理 post 请求，获取 post 请求体
 req.param() ： 处理 get 和 post 请求，但查找优先级由高到低为 req.params→req.body→req.quer
-##js
+## js
 数组使用前判断： if( arr && arr.length)
-###delegate, bind,live,on区别
+### delegate, bind,live,on区别
 https://www.cnblogs.com/moonreplace/archive/2012/10/09/2717136.html
 bind：解决了浏览器在事件处理中的兼容问题，.click(), .hover()...都是bind的一种简化处理方式
 缺点
@@ -49,7 +49,7 @@ $( "#members li a" ).live( "click", function( e ) {} );
 $( "#members" ).on( "click", "li a", function( e ) {} ); 
 $( "#members" ).delegate( "li a", "click", function( e ) {} );   
 
-##css
+## css
 background:bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
 background:url(bgimg.gif) no-repeat 5px 5px; //position
 background-size最好另一行写
@@ -73,14 +73,14 @@ top	把元素的顶端与行中最高元素的顶端对齐
 
 ease-in-out 以慢速开始（in)和结束(out)
 
-###css sticky footer: 
+### css sticky footer: 
 1. 设置content{min-height: calc(100vh - header高-footer高)
 2.parent{display: flex; flex-flow: column;min-height: 100vh;} content { flex: 1; } 然后给页头和页脚设置高度后content就会自动伸缩占满剩余高度
 3. parent{min-height: 100%;}
 content{padding-bottom: 64px;} 
 footer{margin: -64px auto 0 auto;}
 
-###CSS长度值
+### CSS长度值
 单位	含义
 em	相对于父元素的字体大小
 ex	相对于小写字母"x"的高度
@@ -98,7 +98,7 @@ pt	1/72英寸
 pc	12点活字，或1/12点
 %	相对于父元素。正常情况下是通过属性定义自身或其他元素
 
-###flex
+### flex
 容器
 排列方式 flex-flow: <flex-direction> || <flex-wrap>;
 轴上的对齐方式 justify-content: flex-start | flex-end | center | space-between | space-around;
@@ -112,7 +112,7 @@ flex-basis 分配多余空间之前，项目占据的主轴空间（main size）
 align-self 单个项目有与其他项目不一样的对齐方式
 align-self: auto | flex-start | flex-end | center | baseline | stretch;
 
-##vue
+## vue
 v-enter-active: 第一帧指定样式(v-enter)->v-show=true
 v-leave-active: v-show=true ->第一帧指定样式(v-leave-to)
 
