@@ -24,7 +24,7 @@ bind：解决了浏览器在事件处理中的兼容问题，.click(), .hover().
 
 live: 采用事件委托，绑定相应的事件到你所选择的元素的根元素上，即是document元素上。所有通过冒泡上来的事件都可以用这个相同的handler来处理了。可以用在动态添加的元素上。
 缺点：
-从1.7开始已经不被推荐了，所以你也要开始逐步淘汰它了。
+从1.7开始已经不被推荐了，所以你也要开始逐步淘汰它了。 
 Chaining没有被正确的支持
 当使用event.stopPropagation()是没用的，因为都要到达document
 因为所有的selector/event都被绑定到document, 所以当我们使用matchSelector方法来选出那个事件被调用时，会非常慢
