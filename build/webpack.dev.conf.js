@@ -10,8 +10,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
-const HOST = process.env.HOST
-const PORT = process.env.PORT && Number(process.env.PORT)
+// const HOST = process.env.HOST
+// const PORT = process.env.PORT && Number(process.env.PORT)
+const HOST = config.dev.host
+const PORT = Number(config.dev.port)
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -52,11 +54,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true
-    }),
+    // new HtmlWebpackPlugin({
+    //   filename: 'index.html',
+    //   template: 'index.html',
+    //   inject: true
+    // }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -67,6 +69,30 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     ])
   ]
 })
+
+var pages = utils.getMultiEntry('./src/pages/*/index.js') // 获得入口 js 文件
+
+for (var pathname in pages) {
+    var conf = {
+        filename: pathname + '.html',
+        template: 'index.html', // 模板路径
+        // chunks: ['vendor', pathname], // 每个html引用的js模块
+        inject: true, // js插入位置
+        hash: true,
+        minify: {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeAttributeQuotes: true
+            // more options:
+            // https://github.com/kangax/html-minifier#options-quick-reference
+        },
+        // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+        chunks: [pathname, 'vendor'],
+        chunksSortMode: 'dependency'
+    }
+    console.log(pathname + '.html')
+    devWebpackConfig.plugins.push(new HtmlWebpackPlugin(conf))
+}
 
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port

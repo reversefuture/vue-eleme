@@ -143,7 +143,4 @@ props:['categoryID'] 标签内传值就应该这样写 :category-i-d="categoryID
 不要在methods中用箭头函数，箭头函数的this是继承而来; 默认指向在定义它时所处的对象(宿主对象),而不是执行时的对象
 addEventListener（dom,fn)的fn也需要bind(this)
 
-<<<<<<< HEAD
 ## 未完待续
-=======
->>>>>>> d7e451755c1bcc4188bab6e0b0e46c268ad031ce

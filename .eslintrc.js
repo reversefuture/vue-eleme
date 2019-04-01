@@ -46,6 +46,9 @@ module.exports = {
     "keyword-spacing": 0,
     "no-unused-vars": 0,
     "key-spacing": 0,
+    "comma-dangle": 0,
+    "no-labels ": 0,
+    "quotes": [0, "single"],
 
   }
 }

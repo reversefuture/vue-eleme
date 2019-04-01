@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Header from './components/Header/Header'
+import Header from '@/components/Header/Header'
 import Test from '@/components/Test/Test.vue'
 const ERR_OK = 0
 
@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-@import './common/stylus/mixin.styl'
+@import '~@/common/stylus/mixin.styl'
 
 .tab
   display: flex

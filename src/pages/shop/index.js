@@ -2,8 +2,9 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from '@/router'
+import router from './router'
 import '@/common/stylus/index.styl'
+import '@/assets/reset.css'
 
 import axios from 'axios'
 Vue.prototype.$axios = axios

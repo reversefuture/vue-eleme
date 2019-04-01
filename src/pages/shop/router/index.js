@@ -4,8 +4,8 @@ import Router from 'vue-router'
 // 1. 定义（路由）组件。
 // 可以从其他文件 import 进来
 
-import Seller from '../components/Seller/Seller.vue'
-import Rating from '../components/Rating/Rating.vue'
+import Seller from '@/components/Seller/Seller.vue'
+import Rating from '@/components/Rating/Rating.vue'
 import Goods from '@/components/Goods/Goods.vue'
 // 2. 定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是
